@@ -1,0 +1,73 @@
+{% load static %}
+{% load socialaccount %}
+<html>
+    <head> 
+        <title>Home</title> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" 
+      content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+      </script> 
+        <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"> 
+          
+        </script> 
+      </head> 
+      <body> 
+        <nav class="navbar navbar-light" style="background-color: #00cccc;"> 
+        <div class="container-fluid"> 
+          <div class="navbar-header"> 
+              <a class="navbar-brand" href="#" > IBS SOFTWARE</a>  
+          </div> 
+        
+        </div>
+        <div align="right">
+          <button type="button" class="btn btn-secondary"> <a href="review">Review</a></button>
+            </div>
+            {% endif%}     
+          </div>
+        </nav> 
+          <div class="container">
+            <h4 style="color:#00cccc;"><b>MODERNIZING LEGACY</b></h4>
+            <h2 style="color:#00264d" ><b>Transforming Cargo at Lufthansa</b></h2><br>
+            <div class="row">
+              <div class="col-lg-6">
+                    <p><h4>When Lufthansa Cargo found itself tasked with digitizing its<br>
+                 automated legacy systems,it turned to IBS Software.Working <br>
+                 closely with Lufthansa both on-site and off-shore,IBS managed<br>
+                 end-to-end implementtion and testing of all applications under <br>
+                 the core IT platform,enabling a smooth rollout of product <br>
+                 upgrades, new services,and innovations.<br><br>
+                 "<b>From the very first moment IBS was fully dedicated.You could<br>
+                     feel it from the top manangement,to the bottom,to every<br>
+                     every employee</b>."<br><br>
+                     -Walter Isselhard,Senior Director Application Services & Strategic<br>
+                     Platform Projects at Lufthansa Cargo 
+
+                    </h4></p>
+              </div>
+                <div class="col-lg-6">
+                    <img src="/static/images/Lufthansa.PNG" width="100%">
+                </div>
+            </div>
+          </div><br><br>          
+            <div class="container">
+              <div class="row">
+                {% for cust in custs %}
+                <div class="col-sm-4" align="center">
+                  <img src="{{cust.img.url}}" style="width: 200px;"><br>
+                  <button type="button"  onclick="window.location.href= '{{cust.id}}/'" class="btn btn-danger" >More Info</button>
+                </div>
+                {% endfor%}
+                
+              </div>
+            </div>
+            <iframe
+    allow="microphone;"
+    width="350"
+    height="430"
+    src="https://console.dialogflow.com/api-client/demo/embedded/cd6be6c7-b229-48d0-be28-b603d519fa1c">
+</iframe>
+      
+      </body>
+</html>
